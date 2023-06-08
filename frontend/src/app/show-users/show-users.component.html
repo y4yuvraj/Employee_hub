@@ -1,0 +1,61 @@
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">Employee Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Country</th>
+            <th scope="col">City</th>
+            <th scope="col">Job</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of userData">
+            <td>{{row.id}}</td>
+            <td>{{row.name}}</td>
+            <td>{{row.country}}</td>
+            <td>{{row.city}}</td>
+            <td>{{row.job}}</td>
+            <td>
+                <button class="btn btn-info" (click)="openModal(row)">Edit</button>
+                <Button (click)="deleteUser(row)" class="btn btn-danger mx-3">Delete</Button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">User Details</h4>
+                <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span
+                        aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formValue">
+                    <div class="from-group">
+                        <label>Name</label>
+                        <input type="text" name="name" class="form-control" formControlName="name">
+                    </div>
+                    <div class="from-group">
+                        <label>Country</label>
+                        <input type="text" name="country" class="form-control" formControlName="country">
+                    </div>
+                    <div class="from-group">
+                        <label>City</label>
+                        <input type="text" name="city" class="form-control" formControlName="city">
+                    </div>
+                    <div class="from-group">
+                        <label>Job</label>
+                        <input type="text" name="job" class="form-control" formControlName="job">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" (click)="onCloseHandled()">Update</button>
+            </div>
+        </div>
+    </div>
+</div>

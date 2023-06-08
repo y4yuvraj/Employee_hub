@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <h1>Add User Details</h1>
+    <form #userFrom="ngForm" action="showUsers" (ngSubmit)="onSubmit()">
+        <div class="from-group">
+            <label>Name</label>
+            <input type="text" name="name" class="form-control" [(ngModel)]="userModel.name">
+        </div>
+        <div class="from-group">
+            <label>Country</label>
+            <input type="text" name="country" class="form-control" [(ngModel)]="userModel.country">
+        </div>
+        <div class="from-group">
+            <label>City</label>
+            <input type="text" name="city" class="form-control" [(ngModel)]="userModel.city">
+        </div>
+        <div class="from-group">
+            <label>Job</label>
+            <input type="text" name="job" class="form-control" [(ngModel)]="userModel.job">
+        </div>
+        <button class="btn btn-primary mt-3" type="submit">Submit Form</button>
+    </form>
+</div>
+<!-- {{userFrom.value|json}} -->
+<!-- {{userModel|json}} --> 
