@@ -1,5 +1,0 @@
-com\yuv\fullstack\dao\UserRepo.class
-com\yuv\fullstack\service\UserService.class
-com\yuv\fullstack\FullstackCrudH2Application.class
-com\yuv\fullstack\entity\User.class
-com\yuv\fullstack\controller\UserController.class
