@@ -15,7 +15,6 @@ public class ApplicationExceptionHandler {
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	private ArrayList<String> methodArgumentNotValidExceptionHandler(MethodArgumentNotValidException ex) {
-//		System.out.println(ex.getMessage());
 		ArrayList<String> list= new ArrayList<>();
 		ex.getBindingResult().getFieldErrors().forEach(error->{
 			list.add(error.getField()+" "+error.getDefaultMessage());

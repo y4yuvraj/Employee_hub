@@ -40,7 +40,6 @@ public class PersonService {
 			oldUser.setCountry(person.getCountry());
 			oldUser.setCity(person.getCity());
 			oldUser.setJob(person.getJob());
-//			System.out.println(user.getName());
 			personRepo.save(oldUser);
 			return oldUser;
 		}
